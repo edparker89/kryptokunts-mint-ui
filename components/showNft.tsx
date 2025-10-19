@@ -27,8 +27,8 @@ const Trait = ({ heading, description }: TraitProps) => {
       minHeight={"50px"}
     >
       <VStack>
-        <Text fontSize={"sm"}>{heading}</Text>
-        <Text fontSize={"sm"} marginTop={"-2"} fontWeight={"semibold"}>
+        <Text fontSize={"sm"} fontFamily="Jolly Lodger">{heading}</Text>
+        <Text fontSize={"sm"} marginTop={"-2"} fontWeight={"semibold"} fontFamily="Jolly Lodger">
           {description}
         </Text>
       </VStack>
@@ -84,10 +84,10 @@ export default function Card({
         backgroundSize="cover"
         backgroundImage={`url(${image})`}
       />
-      <Text fontWeight={"semibold"} marginTop={"15px"}>
+      <Text fontWeight={"semibold"} marginTop={"15px"} fontFamily="Jolly Lodger">
         {metadata.name}
       </Text>
-      <Text>{metadata.description}</Text>
+      <Text fontFamily="Jolly Lodger">{metadata.description}</Text>
       <Traits metadata={metadata} />
     </Box>
   );

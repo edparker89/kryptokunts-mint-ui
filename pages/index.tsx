@@ -260,30 +260,42 @@ export default function Home() {
         <style jsx global>
           {`
             body {
-              background: #2d3748;
+              background: #1a1a1a;
             }
           `}
         </style>
         <Card>
           <CardHeader>
-            <Flex minWidth="max-content" alignItems="center" gap="2">
+            <Flex minWidth="max-content" alignItems="center" gap="2" paddingBottom={10}>
               <Box>
-                <Heading size="md">{headerText}</Heading>
+                <Heading
+                  size="md"
+                  style={{
+                    fontFamily: "'Shadow of the Deads', cursive",
+                    textShadow: "0 0 10px #7fbf6c, 0 0 20px #7fbf6c",
+                  }}
+                >
+                  {headerText}
+                </Heading>
               </Box>
               {loading ? (
                 <></>
               ) : (
                 <Flex justifyContent="flex-end" marginLeft="auto">
                   <Box
-                    background={"teal.100"}
+                    background="#7fbf6c"
                     borderRadius={"5px"}
-                    minWidth={"50px"}
-                    minHeight={"50px"}
+                    minWidth={"80px"}
                     p={2}
                   >
-                    <VStack>
-                      <Text fontSize={"sm"}>Available NFTs:</Text>
-                      <Text fontWeight={"semibold"}>
+                    <VStack
+                      style={{
+                        fontFamily: "'Jolly Lodger', cursive",
+                        color: "black",
+                      }}
+                    >
+                      <Text fontSize="md">Available NFTs:</Text>
+                      <Text fontWeight="semibold">
                         {Number(candyMachine?.data.itemsAvailable) -
                           Number(candyMachine?.itemsRedeemed)}
                         /{Number(candyMachine?.data.itemsAvailable)}
@@ -365,7 +377,12 @@ export default function Home() {
         <Modal isOpen={isShowNftOpen} onClose={onShowNftClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Your minted NFT:</ModalHeader>
+            <ModalHeader
+              fontFamily="'Shadow of the Deads', sans-serif"
+              fontSize="2xl"
+            >
+              YOUR MINTED NFT
+            </ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <ShowNft nfts={mintsCreated} />

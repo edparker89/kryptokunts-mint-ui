@@ -11,6 +11,20 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { image, headerText } from 'settings'
 import { SolanaTimeProvider } from "@/utils/SolanaTimeContext";
 
+// ✅ Google Fonts
+import { Creepster, Jolly_Lodger } from "@next/font/google";
+
+const creepster = Creepster({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-creepster",
+});
+
+const jollyLodger = Jolly_Lodger({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-jolly",
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   let network = WalletAdapterNetwork.Devnet;
@@ -42,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content={image}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{headerText}</title>
+        <title>KryptoKunts Mint UI</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ChakraProvider>

@@ -495,7 +495,7 @@ export function ButtonList({
   };
 
   // remove duplicates from guardList
-  //fucked up bugfix
+  // fucked up bugfix
   let filteredGuardlist = guardList.filter(
     (elem, index, self) =>
       index === self.findIndex((t) => t.label === elem.label)
@@ -543,7 +543,11 @@ export function ButtonList({
     <Box key={index} marginTop={"20px"}>
       <Divider my="10px" />
       <HStack>
-        <Heading size="xs" textTransform="uppercase">
+        <Heading  size="md"
+          textTransform="uppercase"
+          fontFamily="'Creepster', cursive"
+          color="black"
+        >
           {buttonGuard.header}
         </Heading>
         <Flex justifyContent="flex-end" marginLeft="auto">
@@ -580,7 +584,7 @@ export function ButtonList({
         </Flex>
       </HStack>
       <SimpleGrid columns={2} spacing={5}>
-        <Text pt="2" fontSize="sm">
+        <Text pt="2" fontSize="md">
           {buttonGuard.mintText}
         </Text>
         <VStack>
@@ -595,7 +599,7 @@ export function ButtonList({
                 handleNumberInputChange(buttonGuard.label, valueAsNumber)
               }
             >
-              <NumberInputField />
+              <NumberInputField fontFamily="'Jolly Lodger', cursive" />
               <NumberInputStepper>
                 <NumberIncrementStepper />
                 <NumberDecrementStepper />
@@ -622,13 +626,14 @@ export function ButtonList({
                 )
               }
               key={buttonGuard.label}
-              size="sm"
-              backgroundColor="teal.100"
-              isDisabled={!buttonGuard.allowed}
-              isLoading={
-                guardList.find((elem) => elem.label === buttonGuard.label)
-                  ?.minting
-              }
+              size="md"
+              fontFamily="'Jolly Lodger', cursive"
+              color="black"
+              backgroundColor={buttonGuard.allowed ? "lightgray" : "darkgray"}
+              _hover={{
+              backgroundColor: buttonGuard.allowed ? "#7fbf6c" : "darkgray",
+              color: "black",
+              }}
               loadingText={
                 guardList.find((elem) => elem.label === buttonGuard.label)
                   ?.loadingText
