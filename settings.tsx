@@ -33,7 +33,7 @@ export const mintText = [
   },
   {
     label: "public",
-    mintText: "0.15 SOL",
+    mintText: "0.2 SOL",
     buttonLabel: "Mint now!",
     header: "Public mint",
   },
