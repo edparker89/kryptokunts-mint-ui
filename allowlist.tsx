@@ -21,6 +21,19 @@ export const allowLists = new Map<string, Array<string>> ([
       "JAjfVEeE178eLTBWLUzdtQahtwjQ2FHV3sjrwBuCkw9z",
       "D2oodgQe4umpJtapsoR3kzEo2KJM3ES33qoaMCwU4bu4",
       "BfZW2JyvEVafYSEUwARPzChvyCn7DWiZqSycs1ArigoY",
+      "3hpaZN4tS9g7ZXgRq7nATjRb3k2J4hz2nvwDfmvvvGr3",
+      "27xF4DwXQzRRZDczWPNkZMJSBjSwY5d4SuucJFhi2Jk3",
+      "2hprk7xx39bTb19XN6DmMYLfDpvrfgiNtYegQoee7maE",
+      "2VkDvvMmMebxdBqTP8zSKaLdrdnHSv6CgaG9srKSexUD",
+      "5BPJ3Ua3yZ7TYwnH4rUbSrj4FFQKVay4Z1hm4fPL1bN2",
+      "2bQ6Ttd1Fa3q83PZAfsugK8ZrHNtuLgQm6ZrHLANMqPs",
+      "EWeKoKyVHXGnUxxevgpVm2Gaqr31BWLsVPSV8RmakHTQ",
+      "G227i8g2BXzXLySsQ9dwVQcjikM1fApQqJP7DNPrH2Ax",
+      "FXYNuqCL9JpsaAFTDXkkmbYS2uP4FXxKUmjVFaJ23NRa",
+      "DwCnoAHGiSaeZXzJQQyTPMKrRMNdFvMNGvXcQyWDmdSR",
+      "6cDnowaBSErqhxnRohcTZBz6kQmSr1Dwo1qNWvJU1agq",
+      "Cp2KXsY55DaSvqyi18pfdVVQ9zwLTMA6WD8dmtESdYz7",
+      "8Q33xekaQFtuPLHcGw2QtiJRHBZX3CDg6dSymk6rKj7E"
     ]],
     ["og",
     [
@@ -42,6 +55,9 @@ export const allowLists = new Map<string, Array<string>> ([
       "JAjfVEeE178eLTBWLUzdtQahtwjQ2FHV3sjrwBuCkw9z",
       "D2oodgQe4umpJtapsoR3kzEo2KJM3ES33qoaMCwU4bu4",
       "9NBuKfqpPv7gLWStQTmsmh9TwqpK74wexabnRmHjVwgk",
+      "BfZW2JyvEVafYSEUwARPzChvyCn7DWiZqSycs1ArigoY",
+      "DtfG8ktfX94t6KwHUxoQAGGrYAQz7feVPy5F41ihkB2W",
+      "Ah6eLPh2E6omBV6FVLeDzVBysz8XwijWRwKavUZP5XS4"
     ]],
     ["team",
     [
