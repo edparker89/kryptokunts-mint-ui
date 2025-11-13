@@ -2,10 +2,7 @@
 //You can also add them here and copy the route from the console log 
 export const allowLists = new Map<string, Array<string>> ([
     ["wl",
-    [
-      "2tkGQV54dFDyydR61TZV3pscPx6u2ZsPmFtijjU1GJPP",
-      "HzgjJGdi4YwSF9AJFA4rFhRrUQ9pGWrsgWMEzRnLyfcA",
-      "Dm4Hh5b4rqyL6qJUK3EvC1ngPU9qiTFwkzfY9S43Rfsz",
+    [ 
       "5W5vnKCvn5XA5NcaRpjwaK1Rr4K1fiwc7F5L4Gra84Gw",
       "E4GeYHwTnJgDwYSc6ZrXiHWswPuJJf35ZnrKEdywjJAw",
       "A7jWSt9BEAo7AXEYXFPzmCWppsxjVuphLsbKv3oaxTEJ",
@@ -37,9 +34,6 @@ export const allowLists = new Map<string, Array<string>> ([
     ]],
     ["og",
     [
-      "3suq3cUMH12Hi3NRgENjcFgVbZjAStJc3Lo4WoFYK8bw",
-      "HzgjJGdi4YwSF9AJFA4rFhRrUQ9pGWrsgWMEzRnLyfcA",
-      "BgavGC9VjShMTxiN9iGBNhgzhDog2gwWaPCRSDwqjvxw",
       "9zVRJXcpZ2oa6k3tUzQPgXz6RdSxEiwN1prs9SZmJGeW",
       "9Wvr2i8jQqVMWMurkP5SPYyubnqWpRsVYdQpRScz1tLc",
       "2cNrErotnq9VSKDQgv8EoL52iLJPa2A14Rf3vkJQKLW3",
@@ -61,7 +55,7 @@ export const allowLists = new Map<string, Array<string>> ([
     ]],
     ["team",
     [
-      "C8dzQW9TVs4yVixi9Rv85G3agMY8UmrPg3LdBVbmdehW",
+      "HzgjJGdi4YwSF9AJFA4rFhRrUQ9pGWrsgWMEzRnLyfcA",
     ]],
 ]);
 
