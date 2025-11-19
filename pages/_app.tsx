@@ -10,6 +10,11 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import { ChakraProvider } from '@chakra-ui/react'
 import { image, headerText } from 'settings'
 import { SolanaTimeProvider } from "@/utils/SolanaTimeContext";
+import {
+  PhantomWalletAdapter,
+  SolflareWalletAdapter,
+} from "@solana/wallet-adapter-wallets";
+
 
 // ✅ Google Fonts
 import { Creepster, Jolly_Lodger } from "@next/font/google";
@@ -37,8 +42,10 @@ export default function App({ Component, pageProps }: AppProps) {
   }
   const wallets = useMemo(
     () => [
+      new PhantomWalletAdapter(),
+      new SolflareWalletAdapter({ network }),
     ],
-    []
+    [network]
   );
   return (
     <>
