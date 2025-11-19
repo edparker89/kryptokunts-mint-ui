@@ -1,9 +1,20 @@
+/* WALLET BUTTON WRAPPER */
 .wallet { 
   display: flex;
-  padding: 3rem;
   flex-direction: row-reverse;
+  padding: 3rem;
 }
 
+/* MOBILE FIX */
+@media (max-width: 600px) {
+  .wallet {
+    padding: 1rem;         /* Smaller padding on phones */
+    justify-content: center; /* Center wallet button on mobile */
+  }
+}
+
+
+/* MAIN CONTAINER */
 .center {
   position: relative;
   width: 100%;
@@ -11,11 +22,24 @@
   margin: 0 auto;
   margin-bottom: 3rem;
   border-radius: var(--border-radius);
-  box-shadow: 0 0 25px rgba(3, 255, 189, 0.6); /* neon green glow */
+  box-shadow: 0 0 25px rgba(3, 255, 189, 0.6);
   font-family: var(--font-body);
   color: #000;
+  padding: 1.5rem; /* NEW → spacing for mobile + desktop */
 }
 
+/* MOBILE FIX */
+@media (max-width: 600px) {
+  .center {
+    padding: 1rem;         /* Reduce padding so content fits */
+    margin: 1rem;
+    max-width: 100%;       /* Allow full width on small screens */
+    box-shadow: 0 0 15px rgba(3, 255, 189, 0.5);
+  }
+}
+
+
+/* FORM STYLES */
 .form > * + * {
   display: flex;
   flex-direction: column;
@@ -50,6 +74,8 @@
   fill: currentColor;
 }
 
+
+/* FIELD */
 .field {
   display: block;
 }
@@ -72,6 +98,8 @@
   line-height: 1.5;
 }
 
+
+/* LOADING SPINNER */
 .loading {
   display: flex;
   flex-direction: row;
@@ -93,6 +121,8 @@
   }
 }
 
+
+/* SUCCESS BOX */
 .success {
   cursor: pointer;
   display: flex;
