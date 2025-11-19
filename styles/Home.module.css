@@ -179,16 +179,37 @@
   color: rgb(var(--accent-rgb));
 }
 
-
 /* -----------------------------------------------------
-   CHAKRA CARD FIXES (MOBILE)
+   RESPONSIVE TEXT SCALING FOR MOBILE
 ----------------------------------------------------- */
+
 @media (max-width: 600px) {
-  .chakra-card {
-    padding: 0 !important;
+  /* Main heading (the spooky font headerText) */
+  .chakra-heading {
+    font-size: 1.25rem !important; /* Smaller heading on mobile */
+    text-align: center !important;
+    line-height: 1.2 !important;
   }
 
-  .chakra-card__body {
-    padding: 1rem !important;
+  /* General Text components */
+  .chakra-text {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* NFT counter box text */
+  .chakra-stack .chakra-text {
+    font-size: 0.85rem !important;
+  }
+
+  /* The count number itself */
+  .chakra-stack .chakra-text[font-weight="semibold"] {
+    font-size: 1rem !important;
+  }
+
+  /* Button labels */
+  button .chakra-text,
+  button span {
+    font-size: 0.9rem !important;
   }
 }
