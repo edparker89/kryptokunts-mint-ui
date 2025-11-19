@@ -223,3 +223,26 @@
     font-size: 0.9rem !important;
   }
 }
+
+/* -----------------------------------------------------
+   FIX: AVAILABLE NFTs BOX ON MOBILE
+----------------------------------------------------- */
+@media (max-width: 600px) {
+  /* Box containing the NFT counter */
+  .chakra-card .chakra-box {
+    min-width: 110px !important;   /* Give it a proper width */
+    flex-shrink: 0 !important;     /* Prevent collapse */
+  }
+
+  /* Ensure the text inside stays readable */
+  .chakra-card .chakra-box .chakra-text {
+    font-size: 0.8rem !important;
+    text-align: center !important;
+  }
+
+  /* The number inside the box */
+  .chakra-card .chakra-box .chakra-text[font-weight="semibold"] {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+  }
+}
