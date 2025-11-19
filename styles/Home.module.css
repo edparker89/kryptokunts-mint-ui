@@ -39,7 +39,6 @@
     box-shadow: 0 0 12px rgba(3, 255, 189, 0.45);
   }
 
-  /* Chakra card scaling */
   .center > div {
     width: 100% !important;
     max-width: 100% !important;
@@ -180,59 +179,59 @@
 
 
 /* -----------------------------------------------------
-   MOBILE: CARD + TEXT OPTIMISATION (WITH :global FIX)
+   MOBILE: CARD + TEXT OPTIMISATION (BUILD-SAFE)
 ----------------------------------------------------- */
 @media (max-width: 600px) {
-  :global(.chakra-card) {
+  .center :global(.chakra-card) {
     padding: 0.5rem !important;
     border-radius: 12px !important;
   }
 
-  :global(.chakra-card__body) {
+  .center :global(.chakra-card__body) {
     padding: 0.75rem !important;
   }
 
-  :global(.chakra-card .chakra-heading) {
+  .center :global(.chakra-heading) {
     font-size: 1.2rem !important;
     text-align: center !important;
     line-height: 1.2 !important;
   }
 
-  :global(.chakra-card .chakra-text) {
+  .center :global(.chakra-text) {
     font-size: 0.9rem !important;
     line-height: 1.3 !important;
   }
 
-  :global(.chakra-stack .chakra-text) {
+  .center :global(.chakra-stack .chakra-text) {
     font-size: 0.8rem !important;
   }
 
-  :global(.chakra-stack .chakra-text[font-weight="semibold"]) {
+  .center :global(.chakra-stack .chakra-text[font-weight="semibold"]) {
     font-size: 1rem !important;
   }
 
-  :global(.chakra-button .chakra-text),
-  :global(button span) {
+  .center :global(.chakra-button .chakra-text),
+  .center :global(button span) {
     font-size: 0.9rem !important;
   }
 }
 
 
 /* -----------------------------------------------------
-   FIX: AVAILABLE NFTs BOX ON MOBILE (WITH :global FIX)
+   FIX: AVAILABLE NFTs BOX (BUILD-SAFE)
 ----------------------------------------------------- */
 @media (max-width: 600px) {
-  :global(.chakra-card .chakra-box) {
+  .center :global(.chakra-box) {
     min-width: 110px !important;
     flex-shrink: 0 !important;
   }
 
-  :global(.chakra-card .chakra-box .chakra-text) {
+  .center :global(.chakra-box .chakra-text) {
     font-size: 0.8rem !important;
     text-align: center !important;
   }
 
-  :global(.chakra-card .chakra-box .chakra-text[font-weight="semibold"]) {
+  .center :global(.chakra-box .chakra-text[font-weight="semibold"]) {
     font-size: 1rem !important;
     font-weight: 700 !important;
   }
