@@ -238,12 +238,15 @@
 }
 
 /* -----------------------------------------------------
-   FIX MAIN HEADING (KryptoKunts Mint UI)
+   FIX MAIN TITLE WRAPPING / OVERLAP
 ----------------------------------------------------- */
 @media (max-width: 600px) {
   .center :global(h2.chakra-heading) {
-    font-size: 1.1rem !important;
-    line-height: 1.1 !important;
+    font-size: 0.95rem !important;   /* Smaller title */
+    line-height: 1.1 !important;     /* Tighten spacing to prevent overlap */
+    word-break: keep-all !important; /* Prevents ugly mid-word breaks */
+    white-space: normal !important;  /* Allows wrapping safely */
     text-align: center !important;
+    display: block !important;
   }
 }
