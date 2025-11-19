@@ -89,7 +89,6 @@ const useCandyMachine = (
             umi,
             publicKey(candyMachineId)
           );
-          //verify CM Version
           if (candyMachine.version != AccountVersion.V2) {
             toast({
               id: "wrong-account-version",
@@ -148,11 +147,6 @@ const useCandyMachine = (
   return { candyMachine, candyGuard };
 };
 
-// const now = new Date();
-// now.setMinutes(now.getMinutes() + 500); // Add 5 minutes
-// const isoDate = now.toISOString(); // Convert to ISO 8601 format
-// console.log(isoDate);
-// ``;
 export default function Home() {
   const umi = useUmi();
   const solanaTime = useSolanaTime();
@@ -193,6 +187,7 @@ export default function Home() {
       });
     }
   }
+
   const candyMachineId: PublicKey = useMemo(() => {
     if (process.env.NEXT_PUBLIC_CANDY_MACHINE_ID) {
       return publicKey(process.env.NEXT_PUBLIC_CANDY_MACHINE_ID);
@@ -208,8 +203,8 @@ export default function Home() {
       });
       return publicKey("11111111111111111111111111111111");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   const { candyMachine, candyGuard } = useCandyMachine(
     umi,
     candyMachineId,
@@ -250,23 +245,23 @@ export default function Home() {
     };
 
     checkEligibilityFunc();
-    // On purpose: not check for candyMachine, candyGuard, solanaTime
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [umi, checkEligibility, firstRun]);
 
   const PageContent = () => {
     return (
       <>
-        <style jsx global>
-          {`
-            body {
-              background: #1a1a1a;
-            }
-          `}
-        </style>
+        <style jsx global>{` body { background: #1a1a1a; } `}</style>
+
         <Card>
           <CardHeader>
-            <Flex minWidth="max-content" alignItems="center" gap="2" paddingBottom={10}>
+            {/* ⭐ PATCHED MOBILE-FRIENDLY HEADER ⭐ */}
+            <Flex
+              direction={{ base: "column", md: "row" }}
+              align={{ base: "center", md: "center" }}
+              gap={{ base: 4, md: 2 }}
+              paddingBottom={10}
+              textAlign={{ base: "center", md: "left" }}
+            >
               <Box>
                 <Heading
                   size="md"
@@ -278,47 +273,47 @@ export default function Home() {
                   {headerText}
                 </Heading>
               </Box>
-              {loading ? (
-                <></>
-              ) : (
-                <Flex justifyContent="flex-end" marginLeft="auto">
-                  <Box
-                    background="#7fbf6c"
-                    borderRadius={"5px"}
-                    minWidth={"80px"}
-                    p={2}
+
+              {!loading && (
+                <Box
+                  background="#7fbf6c"
+                  borderRadius="5px"
+                  minWidth="120px"
+                  p={2}
+                  mt={{ base: 2, md: 0 }}
+                >
+                  <VStack
+                    style={{
+                      fontFamily: "'Jolly Lodger', cursive",
+                      color: "black",
+                    }}
                   >
-                    <VStack
-                      style={{
-                        fontFamily: "'Jolly Lodger', cursive",
-                        color: "black",
-                      }}
-                    >
-                      <Text fontSize="md">Available NFTs:</Text>
-                      <Text fontWeight="semibold">
-                        {Number(candyMachine?.data.itemsAvailable) -
-                          Number(candyMachine?.itemsRedeemed)}
-                        /{Number(candyMachine?.data.itemsAvailable)}
-                      </Text>
-                    </VStack>
-                  </Box>
-                </Flex>
+                    <Text fontSize="sm">Available NFTs:</Text>
+                    <Text fontWeight="semibold">
+                      {Number(candyMachine?.data.itemsAvailable) -
+                        Number(candyMachine?.itemsRedeemed)}
+                      /{Number(candyMachine?.data.itemsAvailable)}
+                    </Text>
+                  </VStack>
+                </Box>
               )}
             </Flex>
+            {/* ⭐ END PATCH ⭐ */}
           </CardHeader>
 
           <CardBody>
             <Center>
-              <Box rounded={"lg"} mt={-12} pos={"relative"}>
+              <Box rounded="lg" mt={-12} pos="relative">
                 <Image
-                  rounded={"lg"}
+                  rounded="lg"
                   height={230}
-                  objectFit={"cover"}
-                  alt={"project Image"}
+                  objectFit="cover"
+                  alt="project Image"
                   src={image}
                 />
               </Box>
             </Center>
+
             <Stack divider={<StackDivider />} spacing="8">
               {loading ? (
                 <div>
@@ -344,7 +339,8 @@ export default function Home() {
             </Stack>
           </CardBody>
         </Card>
-        {umi.identity.publicKey === candyMachine?.authority ? (
+
+        {umi.identity.publicKey === candyMachine?.authority && (
           <>
             <Center>
               <Button
@@ -355,6 +351,7 @@ export default function Home() {
                 Initialize Everything!
               </Button>
             </Center>
+
             <Modal isOpen={isInitializerOpen} onClose={onInitializerClose}>
               <ModalOverlay />
               <ModalContent maxW="600px">
@@ -370,8 +367,6 @@ export default function Home() {
               </ModalContent>
             </Modal>
           </>
-        ) : (
-          <></>
         )}
 
         <Modal isOpen={isShowNftOpen} onClose={onShowNftClose}>
