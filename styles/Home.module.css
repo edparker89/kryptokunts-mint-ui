@@ -236,3 +236,14 @@
     font-weight: 700 !important;
   }
 }
+
+/* -----------------------------------------------------
+   FIX MAIN HEADING (KryptoKunts Mint UI)
+----------------------------------------------------- */
+@media (max-width: 600px) {
+  .center :global(h2.chakra-heading) {
+    font-size: 1.1rem !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+  }
+}
