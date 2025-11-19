@@ -1,5 +1,5 @@
 /* -----------------------------------------------------
-   WALLET BUTTON (TOP OF PAGE)
+   WALLET BUTTON (TOP)
 ----------------------------------------------------- */
 .wallet { 
   display: flex;
@@ -31,7 +31,6 @@
   padding: 1.5rem;
 }
 
-/* MOBILE OPTIMISATION */
 @media (max-width: 600px) {
   .center {
     padding: 0.75rem;
@@ -40,7 +39,7 @@
     box-shadow: 0 0 12px rgba(3, 255, 189, 0.45);
   }
 
-  /* Force Chakra Card to stay within container width */
+  /* Ensure Chakra Card scales inside */
   .center > div {
     width: 100% !important;
     max-width: 100% !important;
@@ -50,7 +49,7 @@
 
 
 /* -----------------------------------------------------
-   FORM STYLES (USED FOR GUARD CHECKING)
+   FORM + BUTTONS
 ----------------------------------------------------- */
 .form > * + * {
   display: flex;
@@ -103,7 +102,7 @@
   display: block;
   width: 100%;
   padding: 1rem;
-  margin-top: 0.5rem;
+  margin-top: .5rem;
   border: 1px solid rgb(var(--tertiary-background-rgb));
   border-radius: var(--border-radius);
   background: rgb(var(--secondary-background-rgb));
@@ -139,7 +138,7 @@
 
 
 /* -----------------------------------------------------
-   SUCCESS BOX UI
+   SUCCESS BOX
 ----------------------------------------------------- */
 .success {
   cursor: pointer;
@@ -157,7 +156,7 @@
 .success > div {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: .5rem;
 }
 
 .success code {
@@ -179,36 +178,47 @@
   color: rgb(var(--accent-rgb));
 }
 
-/* -----------------------------------------------------
-   RESPONSIVE TEXT SCALING FOR MOBILE
------------------------------------------------------ */
 
+/* -----------------------------------------------------
+   MOBILE: CARD + TEXT OPTIMISATION
+----------------------------------------------------- */
 @media (max-width: 600px) {
-  /* Main heading (the spooky font headerText) */
-  .chakra-heading {
-    font-size: 1.25rem !important; /* Smaller heading on mobile */
+  /* Shrink the card */
+  .chakra-card {
+    padding: 0.5rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* Inner card spacing */
+  .chakra-card__body {
+    padding: 0.75rem !important;
+  }
+
+  /* Main heading */
+  .chakra-card .chakra-heading {
+    font-size: 1.2rem !important;
     text-align: center !important;
     line-height: 1.2 !important;
   }
 
-  /* General Text components */
-  .chakra-text {
+  /* Base text */
+  .chakra-card .chakra-text {
     font-size: 0.9rem !important;
     line-height: 1.3 !important;
   }
 
-  /* NFT counter box text */
+  /* NFT counter small text */
   .chakra-stack .chakra-text {
-    font-size: 0.85rem !important;
+    font-size: 0.8rem !important;
   }
 
-  /* The count number itself */
+  /* NFT counter number */
   .chakra-stack .chakra-text[font-weight="semibold"] {
     font-size: 1rem !important;
   }
 
-  /* Button labels */
-  button .chakra-text,
+  /* Buttons text */
+  .chakra-button .chakra-text,
   button span {
     font-size: 0.9rem !important;
   }
