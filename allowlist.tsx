@@ -56,6 +56,7 @@ export const allowLists = new Map<string, Array<string>> ([
     ["team",
     [
       "HzgjJGdi4YwSF9AJFA4rFhRrUQ9pGWrsgWMEzRnLyfcA",
+      "FxdjLNnkqoqcQYopQjXFAZWHbEMcmAjfE2FhF6iMFsDV"
     ]],
 ]);
 
