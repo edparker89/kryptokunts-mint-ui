@@ -10,13 +10,13 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import { ChakraProvider } from '@chakra-ui/react'
 import { image, headerText } from 'settings'
 import { SolanaTimeProvider } from "@/utils/SolanaTimeContext";
-import {
-  PhantomWalletAdapter,
-  SolflareWalletAdapter,
-} from "@solana/wallet-adapter-wallets";
 
+// ✅ Correct wallet imports (new)
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";
+import { SolflareWalletAdapter } from "@solana/wallet-adapter-solflare";
+import { BackpackWalletAdapter } from "@solana/wallet-adapter-backpack";
 
-// ✅ Google Fonts
+// Google Fonts
 import { Creepster, Jolly_Lodger } from "@next/font/google";
 
 const creepster = Creepster({
@@ -33,20 +33,29 @@ const jollyLodger = Jolly_Lodger({
 
 export default function App({ Component, pageProps }: AppProps) {
   let network = WalletAdapterNetwork.Devnet;
-  if (process.env.NEXT_PUBLIC_ENVIRONMENT === "mainnet-beta" || process.env.NEXT_PUBLIC_ENVIRONMENT === "mainnet") {
+
+  if (
+    process.env.NEXT_PUBLIC_ENVIRONMENT === "mainnet-beta" ||
+    process.env.NEXT_PUBLIC_ENVIRONMENT === "mainnet"
+  ) {
     network = WalletAdapterNetwork.Mainnet;
   }
+
   let endpoint = "https://api.devnet.solana.com";
   if (process.env.NEXT_PUBLIC_RPC) {
     endpoint = process.env.NEXT_PUBLIC_RPC;
   }
+
+  // Wallets configured here
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
       new SolflareWalletAdapter({ network }),
+      new BackpackWalletAdapter(),   // optional but good to have
     ],
     [network]
   );
+
   return (
     <>
       <Head>
@@ -57,15 +66,12 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Website is based on Mark Sackerbergs work"
         />
         <meta name="description" content="Website is based on Mark Sackerbergs work" />
-
-        <meta
-          property="og:image"
-          content={image}
-        />
+        <meta property="og:image" content={image} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>KryptoKunts Mint UI</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <ChakraProvider>
         <WalletProvider wallets={wallets}>
           <UmiProvider endpoint={endpoint}>
